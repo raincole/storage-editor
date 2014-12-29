@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'apps/index'
 
   post 'api/update_schemas' => 'api#update_schemas'
   post 'api/update_storages' => 'api#update_storages'
