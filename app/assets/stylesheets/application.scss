@@ -1,0 +1,88 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require jsoneditor
+ *= require_self
+ *= require_tree .
+ */
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+[contenteditable="true"] {
+  white-space: nowrap;
+  overflow: hidden;
+} 
+[contenteditable="true"] br {
+  display:none;
+}
+[contenteditable="true"] * {
+  display:inline;
+  white-space:nowrap;
+}
+
+ body {
+  font-family: benton-sans, 'Helvetica Neue', helvetica, arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+ }
+
+.main-list-container {
+  width: 900px;
+  margin: 20px auto;
+
+  .title {
+    font-size: 36px;
+    margin: 10px 0;
+  }
+
+  ul.main-list {
+    list-style: none;
+    border-top: 1px solid #555;
+    padding: 5px 20px;
+
+    li {
+      border-bottom: 1px solid gray;
+      height: 50px;
+      width: 100%;
+      vertical-align: middle;
+      cursor: pointer;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      a {
+        display: block;
+        padding: 0px 30px;
+        margin: 5px;
+        line-height: 50px;
+        font-size: 28px;
+        color: black;
+        text-decoration: none;
+
+        &:link, &:hover, &:visited, &:active {
+          color: black;
+        }
+
+        &:hover {
+          background-color: #EEE;
+        }
+      }
+    }
+  }
+}

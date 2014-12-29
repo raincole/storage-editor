@@ -1,0 +1,10 @@
+<div class="main-list-container">
+  <div class="title"><%= @app.name %></div>
+  <ul class="main-list">
+    <% @app.devices.each do |device| %>
+      <li>
+        <%= link_to device.display_name, device_path(device) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post 'api/update_storages' => 'api#update_storages'
   get 'api/get_storages' => 'api#get_storages'
 
+  resources :apps
+  resources :devices
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

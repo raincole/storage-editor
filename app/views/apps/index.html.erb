@@ -1,0 +1,10 @@
+<div class="main-list-container">
+  <div class="title">Apps</div>
+  <ul class="main-list">
+    <% @apps.each do |app| %>
+      <li>
+        <%= link_to app.name, app_path(app) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

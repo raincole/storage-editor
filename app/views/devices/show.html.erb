@@ -1,0 +1,24 @@
+<div class="storage-list-container">
+  <div class="device-name" contenteditable><%= @device.display_name %></div>
+  <ul class="storage-list clearfix">
+    <% @device.storages.each do |storage| %>
+      <li class="storage-list-item" data-storage-name="<%= storage.schema.name %>">
+        <%= storage.schema.name %>
+      </li>
+    <% end %>
+  </ul>
+  <div id="json-editor">
+  </div>
+</div>
+
+<div id="metadata"
+  data-app-name="<%= @device.app.name %>"
+  data-device-uuid="<%= @device.uuid %>"
+  data-device-id="<%= @device.id %>"
+  />
+
+<% @device.storages.each do |storage| %>
+  <script class='json-data' id="storage-<%= storage.schema.name %>" type="application/json">
+    <%= raw(storage.data) %>
+  </script>
+<% end %>

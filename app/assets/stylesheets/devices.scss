@@ -1,0 +1,51 @@
+// Place all the styles related to the devices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.storage-list-container {
+  width: 900px;
+  margin: 20px auto;
+
+  .device-name {
+    font-size: 28px;
+    margin: 10px 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    br {
+      display: none;
+    }
+
+    * {
+      display:inline;
+      white-space:nowrap;
+    }
+  }
+
+  ul.storage-list {
+    list-style: none;
+    border-bottom: 1px solid #555;
+    padding: 0 30px 15px;
+
+    li {
+      float: left;
+      border: 1px solid #CCC;
+      padding: 5px 15px 7px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &.active {
+        border-color: #67a3e4;
+        box-shadow: 0 0 4px #67a3e4;
+      }
+    }
+  }
+
+  #json-editor {
+    height: 600px;
+    width: 90%;
+    margin: 10px auto;
+  }
+}
