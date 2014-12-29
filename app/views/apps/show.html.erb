@@ -3,7 +3,7 @@
   <ul class="main-list">
     <% @app.devices.each do |device| %>
       <li>
-        <%= link_to device.display_name, device_path(device) %>
+        <%= link_to device.display_name, device_path(device), { :'data-no-turbolink' => true } %>
       </li>
     <% end %>
   </ul>
