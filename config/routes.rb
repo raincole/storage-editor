@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 
+  post 'api/update_schemas' => 'api#update_schemas'
+  post 'api/update_storages' => 'api#update_storages'
+  get 'api/get_storages' => 'api#get_storages'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
