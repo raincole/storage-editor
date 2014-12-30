@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require jsoneditor
+ *= require jquery-ui
  *= require_self
  *= require_tree .
  */
@@ -35,11 +36,25 @@
   white-space:nowrap;
 }
 
- body {
+.ui-tooltip {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: white;
+  font: 12px arial, Sans-Serif;
+  font-weight: lighter;
+  color: #333;
+}
+
+.ui-tooltip, .arrow:after {
+  background: transparent;
+  border: none;
+}
+
+body {
   font-family: benton-sans, 'Helvetica Neue', helvetica, arial, sans-serif;
   font-size: 16px;
   color: #333;
- }
+}
 
 .main-list-container {
   width: 900px;

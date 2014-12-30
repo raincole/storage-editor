@@ -2,6 +2,21 @@ $(document).ready( ->
   editorElement = document.getElementById('json-editor')
 
   if editorElement
+    resetTooltips = ->
+      schema = JSON.parse(document.getElementById('schema-'+currentStorageName).innerText)
+      for key, value of schema
+        parts = key.split(':')
+        primaryKey = parts[0]
+        secondaryKey = parts[1]
+        if secondaryKey == 'description'
+          $('#json-editor .field').each( ->
+            if @.innerText == primaryKey
+              valueElem = $(@).parent().parent().find('.value')[0]
+              valueElem.title = value
+              $(valueElem).tooltip({
+                position: { my: "left+10 top+5", at: "right top-5", collision: "flipfit" }
+              })
+          )
 
     $('.device-name').on('blur', ->
       $metadata = $('#metadata')
@@ -14,14 +29,21 @@ $(document).ready( ->
       )
     )
 
+    $(document).on('focus', '[contenteditable]', (event) ->
+      if $(@).tooltip('instance')
+        $(@).tooltip('close')
+    )
+
     $(document).on('keyup', '[contenteditable]', (event) ->
       if event.which == 13
         $(this).trigger('blur')
+        resetTooltips()
     )
 
     storages = {}
     $('.json-data').each( ->
-      storages[@.id.replace('storage-', '')] = JSON.parse(@.innerHTML)
+      if @.id.indexOf('storage-') == 0
+        storages[@.id.replace('storage-', '')] = JSON.parse(@.innerHTML)
     )
     currentStorageName = ''
 
@@ -62,6 +84,8 @@ $(document).ready( ->
       currentStorageName = $(@).data('storage-name')
       editor.set(storages[currentStorageName])
       editor.setName(@.innerText)
+      resetTooltips() 
     )
     $('.storage-list-item').first().click();
+
 )

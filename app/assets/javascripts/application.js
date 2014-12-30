@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jsoneditor
+//= require jquery-ui
 //= require_tree .

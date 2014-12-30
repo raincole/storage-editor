@@ -21,4 +21,7 @@
   <script class='json-data' id="storage-<%= storage.schema.name %>" type="application/json">
     <%= raw(storage.data) %>
   </script>
+  <script class='json-data' id="schema-<%= storage.schema.name %>" type="application/json">
+    <%= raw(storage.schema.schema) %>
+  </script>
 <% end %>
