@@ -19,7 +19,9 @@ class ApiController < ApplicationController
     storages_data.each do |datum|
       schema = Schema.find_by(:name => datum[:name])
       storage = device.storages.find_or_create_by(:schema_id => schema.id)
-      storage.update(:data => datum[:data].to_json)
+      if(params[:savedAt] > storage.changed_at)
+        storage.update(:data => datum[:data].to_json)
+      end
     end
 
     render :text => 'ok'
