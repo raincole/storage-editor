@@ -37,7 +37,10 @@ $(document).ready( ->
     $(document).on('keyup', '[contenteditable]', (event) ->
       if event.which == 13
         $(this).trigger('blur')
-        resetTooltips()
+    )
+
+    $(document).on('blur', '[contenteditable]', (event) ->
+      resetTooltips()
     )
 
     storages = {}
