@@ -42,12 +42,13 @@
   background-color: white;
   font: 12px arial, Sans-Serif;
   font-weight: lighter;
-  color: #333;
+  color: #666;
 }
 
 .ui-tooltip, .arrow:after {
   background: transparent;
   border: none;
+  box-shadow: 0 0 1px gray;
 }
 
 body {
