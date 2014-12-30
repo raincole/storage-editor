@@ -40,7 +40,7 @@ $(document).ready( ->
     )
 
     $(document).on('blur', '[contenteditable]', (event) ->
-      resetTooltips()
+      setTimeout(( -> resetTooltips()), 250)
     )
 
     storages = {}
