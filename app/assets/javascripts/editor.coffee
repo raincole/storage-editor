@@ -88,7 +88,14 @@ $(document).ready( ->
       editor.set(storages[currentStorageName])
       editor.setName(@.innerText)
       resetTooltips() 
+      location.hash = '#' + currentStorageName
     )
-    $('.storage-list-item').first().click();
 
+    currentItem = $('.storage-list-item').filter((i, elem) ->
+      $(elem).data('storage-name') == location.hash.substring(1)
+    )[0]
+    if currentItem 
+      $(currentItem).click();
+    else
+      $('.storage-list-item').first().click();
 )
