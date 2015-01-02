@@ -12,7 +12,7 @@ $(document).ready( ->
           $('#json-editor .field').each( ->
             if @.innerText == primaryKey
               valueElem = $(@).parent().parent().find('.value')[0]
-              valueElem.title = value
+              valueElem.title = value + ' (' + schema[primaryKey+':default'] + ')' 
               $(valueElem).tooltip({
                 position: { my: "left+10 top+5", at: "right top-5", collision: "flipfit" }
               })
