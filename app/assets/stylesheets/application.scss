@@ -72,11 +72,12 @@ body {
     padding: 5px 20px;
 
     li {
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid #DDD;
       height: 50px;
       width: 100%;
       vertical-align: middle;
       cursor: pointer;
+      padding-bottom: 5px;
 
       &:last-child {
         border-bottom: none;
