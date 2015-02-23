@@ -62,7 +62,7 @@ $(document).ready( ->
     ), 50)
 
     editor = new JSONEditor(document.getElementById('json-editor'),
-      'mode': 'form',
+      'modes': ['form', 'code'],
       'change': ->
         storages[currentStorageName] = editor.get()
         storagesData = [] 
